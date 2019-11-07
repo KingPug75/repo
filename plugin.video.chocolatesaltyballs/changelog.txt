@@ -1,0 +1,5 @@
+[COLOR lime]v0.2[/COLOR]
+    - Release 0.2 initial Beta Tester release
+    - Redid code to allow Direct Torrent links (Cause im too lazy to see if thay have a new template has that added, nor am i botherd to look for their stuff)
+    - Reworking lists
+    - Tweaked a few things
