@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label>LibreELEC</label>
+        <label2>Common Shortcut</label2>
+        <defaultID>libreelec</defaultID>
+        <icon>special://skin/extras/icons/libreelec.png</icon>
+        <action>RunAddon(service.libreelec.settings)</action>
+        <visible>System.HasAddon(service.libreelec.settings)</visible>
+    </shortcut>
+    <shortcut>
+        <label>OpenELEC</label>
+        <label2>Common Shortcut</label2>
+        <defaultID>openelec</defaultID>
+        <icon>special://skin/extras/icons/openelec.png</icon>
+        <action>RunAddon(service.openelec.settings)</action>
+        <visible>System.HasAddon(service.openelec.settings)</visible>
+    </shortcut>
+</shortcuts>
