@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol>90001</defaultcontrol>
+    <backgroundcolor>background</backgroundcolor>
+    <controls>
+        <include>DefaultBackground</include>
+        <control type="group">
+            <control type="group">
+                <left>110</left>
+                <top>0</top>
+                <control type="group">
+                    <include>OpenClose_Left</include>
+                    <control type="grouplist" id="700">
+                    <orientation>vertical</orientation>
+                    <itemgap>-16</itemgap>
+                    <left>-113</left>
+                    <top>295</top>
+                    <onup>700</onup>
+                    <ondown>700</ondown>
+                    <onright>211</onright>
+                    <include content="BottomMainMenuItem">
+                        <param name="control_id" value="303" />
+                        <param name="icon" value="special://skin/extras/icons/up.png" />
+                    </include>
+                    <include content="BottomMainMenuItem">
+                        <param name="control_id" value="304" />
+                        <param name="icon" value="special://skin/extras/icons/down.png" />
+                    </include>
+                    <include content="BottomMainMenuItem">
+                        <param name="control_id" value="301" />
+                        <param name="icon" value="special://skin/extras/icons/add.png" />
+                    </include>
+                    <include content="BottomMainMenuItem">
+                        <param name="control_id" value="313" />
+                        <param name="icon" value="special://skin/extras/icons/disable.png" />
+                    </include>
+                    <include content="BottomMainMenuItem">
+                        <param name="control_id" value="302" />
+                        <param name="icon" value="special://skin/extras/icons/delete.png" />
+                    </include>
+                </control>
+                    <control type="image">
+                        <description>Menu Panel</description>
+                        <left>-20</left>
+                        <top>178</top>
+                        <width>440</width>
+                        <height>709</height>
+                        <texture border="22">dialogs/dialog-bg.png</texture>
+                    </control>
+                    <control type="group">
+                        <visible>Control.IsVisible(211)</visible>
+                        <control type="button">
+                            <left>176</left>
+                            <top>145</top>
+                            <width>48</width>
+                            <height>24</height>
+                            <texturefocus colordiffuse="button_focus" flipy="true">overlays/arrowdown.png</texturefocus>
+                            <texturenofocus colordiffuse="$VAR[SkinColorVar]" flipy="true">overlays/arrowdown.png</texturenofocus>
+                            <animation effect="zoom" start="100,0" end="100,100" center="auto" time="200" delay="10">VisibleChange</animation>
+                            <animation effect="zoom" start="100,0" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+                            <animation effect="zoom" start="100,100" end="100,0" center="auto" time="200">WindowClose</animation>
+                            <onclick>SetFocus(211)</onclick>
+                            <onclick>PageUp</onclick>
+                            <animation effect="fade" time="200">VisibleChange</animation>
+                            <visible>Container(211).HasPrevious</visible>
+                        </control>
+                        <control type="button">
+                            <left>176</left>
+                            <top>897</top>
+                            <width>48</width>
+                            <height>24</height>
+                            <texturefocus colordiffuse="button_focus">overlays/arrowdown.png</texturefocus>
+                            <texturenofocus colordiffuse="$VAR[SkinColorVar]">overlays/arrowdown.png</texturenofocus>
+                            <animation effect="zoom" start="100,0" end="100,100" center="auto" time="200" delay="10">VisibleChange</animation>
+                            <animation effect="zoom" start="100,0" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+                            <animation effect="zoom" start="100,100" end="100,0" center="auto" time="200">WindowClose</animation>
+                            <onclick>SetFocus(211)</onclick>
+                            <onclick>PageDown</onclick>
+                            <animation effect="fade" time="200">VisibleChange</animation>
+                            <visible>Container(211).HasNext</visible>
+                        </control>
+                    </control>
+                    <control type="list" id="211">
+                        <left>0</left>
+                        <top>200</top>
+                        <width>400</width>
+                        <height>666</height>
+                        <onleft>700</onleft>
+                        <onright>90001</onright>
+                        <onup>211</onup>
+                        <ondown>211</ondown>
+                        <pagecontrol>61</pagecontrol>
+                        <itemlayout height="74">
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>390</width>
+                                <height>75</height>
+                                <texture border="90,3,90,3">lists/separator.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>-3</left>
+                                <top>1</top>
+                                <width>70</width>
+                                <height>70</height>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                            </control>
+                            <control type="label">
+                                <left>74</left>
+                                <top>0</top>
+                                <height>70</height>
+                                <width>321</width>
+                                <aligny>center</aligny>
+                                <font>font14</font>
+                                <label>$INFO[ListItem.Label]</label>
+                                <shadowcolor>text_shadow</shadowcolor>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="74">
+                            <control type="image">
+                                <left>0</left>
+                                <top>0</top>
+                                <width>390</width>
+                                <height>75</height>
+                                <texture border="90,3,90,3">lists/separator.png</texture>
+                                <visible>!Control.HasFocus(211) + !Control.HasFocus(90001)</visible>
+                            </control>
+                            <control type="group">
+                                <control type="image">
+                                    <left>2</left>
+                                    <top>0</top>
+                                    <width>396</width>
+                                    <height>73</height>
+                                    <texture colordiffuse="button_focus">lists/focus.png</texture>
+                                    <animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(90001)">Conditional</animation>
+                                </control>
+                                <control type="image">
+                                    <left>-3</left>
+                                    <top>1</top>
+                                    <width>70</width>
+                                    <height>70</height>
+                                    <texture colordiffuse="button_focus">$INFO[ListItem.Icon]</texture>
+                                    <animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+                                </control>
+                                <control type="image">
+                                    <left>-5</left>
+                                    <top>0</top>
+                                    <width>68</width>
+                                    <height>74</height>
+                                    <texture colordiffuse="51FFFFFF">colors/black.png</texture>
+                                    <animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(90001)">Conditional</animation>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <left>-3</left>
+                                <top>1</top>
+                                <width>70</width>
+                                <height>70</height>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                            </control>
+                            <control type="label">
+                                <left>74</left>
+                                <top>0</top>
+                                <height>70</height>
+                                <width>321</width>
+                                <aligny>center</aligny>
+                                <font>font14</font>
+                                <scroll>yes</scroll>
+                                <label>$INFO[ListItem.Label]</label>
+                                <shadowcolor>text_shadow</shadowcolor>
+                            </control>
+                            <control type="label">
+                                <left>74</left>
+                                <top>0</top>
+                                <height>70</height>
+                                <width>321</width>
+                                <aligny>center</aligny>
+                                <font>font14</font>
+                                <scroll>yes</scroll>
+                                <label>$INFO[ListItem.Label] ($LOCALIZE[1223])</label>
+                                <shadowcolor>text_shadow</shadowcolor>
+                                <visible>String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <include>OpenClose_Right</include>
+                <control type="image">
+                    <left>530</left>
+                    <top>138</top>
+                    <width>1300</width>
+                    <height>792</height>
+                    <texture border="22">dialogs/dialog-bg.png</texture>
+                </control>
+                <control type="image">
+                    <left>552</left>
+                    <top>802</top>
+                    <width>1256</width>
+                    <height>3</height>
+                    <texture colordiffuse="$VAR[SkinColorVar]" border="2">dialogs/separator.png</texture>
+                </control>
+                <include name="UpDownArrows">
+                    <param name="container_id" value="90001" />
+                    <param name="posx" value="1045" />
+                    <param name="up_posy" value="130" />
+                    <param name="down_posy" value="910" />
+                    <param name="visible" value="!System.HasModalDialog" />
+                </include>
+                <control type="grouplist" id="90001">
+                    <left>552</left>
+                    <top>160</top>
+                    <width>1256</width>
+                    <height>630</height>
+                    <onleft>211</onleft>
+                    <onright>60</onright>
+                    <onup>90001</onup>
+                    <ondown>90001</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <control type="button" id="401">
+                        <description>Choose shortcut</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32048]</label>
+                        <label2>$INFO[Container(211).ListItem.Label]</label2>
+                        <visible>!String.IsEqual(Container(211).ListItem.Label,OpenELEC) + !String.IsEqual(Container(211).ListItem.Label,LibreELEC)</visible>
+                    </control>
+                    <control type="button" id="307">
+                        <description>Change action</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32027]</label>
+                        <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+                        <visible>!String.IsEqual(Container(211).ListItem.Label,OpenELEC) + !String.IsEqual(Container(211).ListItem.Label,LibreELEC)</visible>
+                    </control>
+                    <control type="button" id="305">
+                        <description>Change label</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32025]</label>
+                        <label2>$INFO[Container(211).ListItem.Label]</label2>
+                        <visible>!String.IsEqual(Container(211).ListItem.Label,OpenELEC) + !String.IsEqual(Container(211).ListItem.Label,LibreELEC)</visible>
+                    </control>
+                <control type="button" id="311" description="Browse for Thumb">
+                        <description>Change label</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>Set Icon</label>
+						<label2>$INFO[Container(211).ListItem.Icon]</label2>
+                 </control>
+				 <control type="button" id="310">
+                        <description>Browse for background</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32045]</label>
+                        <label2>$VAR[Label_SkinSetting_Backgrounds]</label2>
+
+                    </control>
+                    <control type="button" id="3100">
+                         <description>Browse for background</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+						<label>Widget 1</label>
+						<label2>$INFO[Container(211).ListItem.Property(widgetName.personalposter1)]</label2>
+					
+                        <onclick>ClearProperty(WidgetVisibility,home)</onclick>
+                        <onclick>SetProperty(widgetID, personalposter1)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                       
+                    </control>
+                    <control type="button" id="3101">
+                         <description>Browse for background</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+						<label>Widget 2</label>
+						<label2>$INFO[Container(211).ListItem.Property(widgetName.personalposter2)]</label2>
+					
+                        <onclick>ClearProperty(WidgetVisibility,home)</onclick>
+                        <onclick>SetProperty(widgetID, personalposter2)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                       
+                    </control>
+                    <control type="button" id="3103">
+                         <description>Browse for background</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+						<label>Widget 3</label>
+						<label2>$INFO[Container(211).ListItem.Property(widgetName.personalposter3)]</label2>
+					
+                        <onclick>ClearProperty(WidgetVisibility,home)</onclick>
+                        <onclick>SetProperty(widgetID, personalposter3)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                       
+                    </control>
+                    <control type="button" id="3104">
+                         <description>Browse for background</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+						<label>Widget 4</label>
+						<label2>$INFO[Container(211).ListItem.Property(widgetName.personalposter4)]</label2>
+					
+                        <onclick>ClearProperty(WidgetVisibility,home)</onclick>
+                        <onclick>SetProperty(widgetID, personalposter4)</onclick>
+                        <onclick>SendClick(312)</onclick>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                       
+                    </control>
+                    <include content="Shortcuts_SetHub">
+                        <param name="hubid" value="1114" />
+                        <param name="buttonid1" value="1487" />
+                    </include>
+                    <include content="Shortcuts_SetHub">
+                        <param name="hubid" value="1115" />
+                        <param name="buttonid1" value="1488" />
+                    </include>
+                    <include content="Shortcuts_SetHub">
+                        <param name="hubid" value="1116" />
+                        <param name="buttonid1" value="1489" />
+                    </include>
+                    <include content="Shortcuts_SetHub">
+                        <param name="hubid" value="1117" />
+                        <param name="buttonid1" value="1490" />
+                    </include>
+                    <include content="Shortcuts_SetHub">
+                        <param name="hubid" value="1118" />
+                        <param name="buttonid1" value="1491" />
+                    </include>          
+                    <control type="button" id="405">
+                        <description>Edit submenu</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32072]</label>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                        <visible>!String.IsEqual(Container(211).ListItem.Property(widget),WeatherWidget) + ![String.IsEmpty(Container(211).ListItem.Property(HideBannerWidget)) + String.IsEqual(Container(211).ListItem.Property(widget),PictureWidget) + !Skin.HasSetting(horizontal_menu) + !Skin.HasSetting(horizontaladvanced_menu)]</visible>
+                        <visible>!String.IsEqual(Container(211).ListItem.Label,OpenELEC) + !String.IsEqual(Container(211).ListItem.Label,LibreELEC)</visible>
+                    </control>
+                    <control type="button" id="312">
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label></label>
+                        <label2></label2> 
+                        <visible>false</visible>
+                    </control>
+				</control>
+                <control type="textbox" id="6">
+                    <description>description area</description>
+                    <left>590</left>
+                    <top>810</top>
+                    <width>1150</width>
+                    <height>83</height>
+                    <font>font12</font>
+                    <align>justify</align>
+                    <textcolor>$VAR[SkinColorVar]</textcolor>
+                    <label>$VAR[SkinSettingsHelpTextVar]</label>
+                    <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <include>OpenClose_Right</include>
+            <control type="button">
+                <left>1141</left>
+                <top>105</top>
+                <width>48</width>
+                <height>24</height>
+                <texturefocus colordiffuse="$VAR[SkinColorVar]" flipy="true">overlays/arrowdown.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[SkinColorVar]" flipy="true">overlays/arrowdown.png</texturenofocus>
+                <animation effect="zoom" start="100,0" end="100,100" center="auto" time="200" delay="10">VisibleChange</animation>
+                <animation effect="zoom" start="100,0" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+                <animation effect="zoom" start="100,100" end="100,0" center="auto" time="200">WindowClose</animation>
+                <onclick>SetFocus(90001)</onclick>
+                <onclick>PageUp</onclick>
+                <animation effect="fade" time="200">VisibleChange</animation>
+                <visible>Container(90001).HasPrevious</visible>
+            </control>
+            <control type="button">
+                <left>1141</left>
+                <top>940</top>
+                <width>48</width>
+                <height>24</height>
+                <texturefocus colordiffuse="$VAR[SkinColorVar]">overlays/arrowdown.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[SkinColorVar]">overlays/arrowdown.png</texturenofocus>
+                <animation effect="zoom" start="100,0" end="100,100" center="auto" time="200" delay="10">VisibleChange</animation>
+                <animation effect="zoom" start="100,0" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+                <animation effect="zoom" start="100,100" end="100,0" center="auto" time="200">WindowClose</animation>
+                <onclick>SetFocus(90001)</onclick>
+                <onclick>PageDown</onclick>
+                <animation effect="fade" time="200">VisibleChange</animation>
+                <visible>Container(90001).HasNext</visible>
+            </control>
+        </control>
+        <include content="TopBar">
+            <param name="breadcrumbs_label" value="$LOCALIZE[5] / $LOCALIZE[20077]" />
+            <param name="breadcrumbs_icon" value="icons/settings/skin.png" />
+        </include>
+        <include>BottomBar</include>
+    </controls>
+</window>

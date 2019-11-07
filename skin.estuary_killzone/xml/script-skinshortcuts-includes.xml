@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+	<include name="skinshortcuts-mainmenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<label>LibreELEC</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/libreelec.png</icon>
+			<thumb />
+			<property name="labelID">libreelec</property>
+			<property name="defaultID">libreelec</property>
+			<visible>System.HasAddon(service.libreelec.settings)</visible>
+			<onclick>RunAddon(service.libreelec.settings)</onclick>
+			<property name="path">RunAddon(service.libreelec.settings)</property>
+			<property name="list">RunAddon(service.libreelec.settings)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">libreelec</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<label>OpenELEC</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/openelec.png</icon>
+			<thumb />
+			<property name="labelID">openelec</property>
+			<property name="defaultID">openelec</property>
+			<visible>System.HasAddon(service.openelec.settings)</visible>
+			<onclick>RunAddon(service.openelec.settings)</onclick>
+			<property name="path">RunAddon(service.openelec.settings)</property>
+			<property name="list">RunAddon(service.openelec.settings)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">openelec</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<label>MrBlamos Collection</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>DefaultHardDisk.png</icon>
+			<thumb />
+			<property name="labelID">mrblamoscollection</property>
+			<property name="defaultID">mrblamoscollection</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\,return)</property>
+			<property name="list">D:\MrBlamos Collection\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">mrblamoscollection</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+	</include>
+	<include />
+	<include name="skinshortcuts-submenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>MrBlamos Collection</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>DefaultHardDisk.png</icon>
+			<thumb />
+			<property name="labelID">mrblamoscollection</property>
+			<property name="defaultID">mrblamoscollection</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\,return)</property>
+			<property name="list">D:\MrBlamos Collection\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),libreelec)</visible>
+			<property name="group">libreelec</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Movies</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Movies\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>Project Blue Book</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">projectbluebook</property>
+			<property name="defaultID">projectbluebook</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Project Blue Book\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>Roswell</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">roswell</property>
+			<property name="defaultID">roswell</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Roswell\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>The Orville</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">theorville</property>
+			<property name="defaultID">theorville</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</property>
+			<property name="list">D:\MrBlamos Collection\The Orville\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-libreelec">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>MrBlamos Collection</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>DefaultHardDisk.png</icon>
+			<thumb />
+			<property name="labelID">mrblamoscollection</property>
+			<property name="defaultID">mrblamoscollection</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\,return)</property>
+			<property name="list">D:\MrBlamos Collection\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">libreelec</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-libreelec">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>MrBlamos Collection</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>DefaultHardDisk.png</icon>
+			<thumb />
+			<property name="labelID">mrblamoscollection</property>
+			<property name="defaultID">mrblamoscollection</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\,return)</property>
+			<property name="list">D:\MrBlamos Collection\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),libreelec)</visible>
+			<property name="group">libreelec</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-openelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-openelec">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-mrblamoscollection">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Movies</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Movies\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>Project Blue Book</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">projectbluebook</property>
+			<property name="defaultID">projectbluebook</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Project Blue Book\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>Roswell</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">roswell</property>
+			<property name="defaultID">roswell</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Roswell\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>The Orville</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">theorville</property>
+			<property name="defaultID">theorville</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</property>
+			<property name="list">D:\MrBlamos Collection\The Orville\</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-mrblamoscollection">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Movies</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Movies\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Movies\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>Project Blue Book</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">projectbluebook</property>
+			<property name="defaultID">projectbluebook</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Project Blue Book\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Project Blue Book\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>Roswell</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">roswell</property>
+			<property name="defaultID">roswell</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\Roswell\,return)</property>
+			<property name="list">D:\MrBlamos Collection\Roswell\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>The Orville</label>
+			<label2>$ADDON[script.skinshortcuts 32024]</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">theorville</property>
+			<property name="defaultID">theorville</property>
+			<onclick>ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</onclick>
+			<property name="path">ActivateWindow(10025,D:\MrBlamos Collection\The Orville\,return)</property>
+			<property name="list">D:\MrBlamos Collection\The Orville\</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),mrblamoscollection)</visible>
+			<property name="group">mrblamoscollection</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+</includes>
