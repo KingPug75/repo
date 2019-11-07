@@ -92,7 +92,7 @@
     </extension>
 </addon>
 
-    <addon id="repository.blamorepo" name="[COLOR red]Blamo Repo[/COLOR]" version="1.1.3" provider-name="[COLOR red]Mr.Blamo[/COLOR]">
+    <addon id="repository.blamorepo" name="[COLOR red]Blamo Repo[/COLOR]" version="1.1.4" provider-name="[COLOR red]Mr.Blamo[/COLOR]">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -130,7 +130,7 @@
         </extension>
     </addon>
 
-<addon id="script.extendedinfo" name="[COLOR purple]Wraith[/COLOR]" version="100.2.0" provider-name="Revived by [COLOR gold]Legal[/COLOR], original work by phil65">
+<addon id="script.extendedinfo" name="[COLOR purple]Wraith[/COLOR]" version="100.2.1" provider-name="Revived by [COLOR gold]Mr,Blamo, original work by phil65">
   <requires>
     <import addon="xbmc.python"                     version="2.19.0"/>
     <import addon="plugin.program.super.favourites"/>
