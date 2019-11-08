@@ -1,0 +1,42 @@
+v9.1.1
+- Made Kodi 18 Compatible
+v9.1.0
+- EIM/Wraith Fixes 
+- Bug Fixes (Thanks KingPug)
+v9.0.8
+- New Script Calls (Thanks to KingPug)
+v9.0.7
+- TMDB Fixes Thanks KingPug
+v9.0.6
+- Few fixes
+v9.0.4
+- Few minor tweaks
+- Changed api
+v9.0.3
+- Fixed loading hang
+- Edited few things to fix issues causing chappa'ai to hang using wraith
+- Few small tweaks
+v9.0.2
+- Little tweak
+v9.0.1
+- Fixed Movie info error
+- Edits to dialog info
+- Was gonna down the version BUT (kodis version of eim is in ways broken in some parts, hasn't been updated in over 6 months, and this has major bug fixes etc.
+- If you'd like to use the version of Extended Info that is in the Kodi Repo, uninstall Chappa'ai,Wraith, Super Favorites and disable Extended Info updates in Kodi repo.
+v9.0.0
+- Major version bump to overwrite kodi's version
+- Changed a bunch of things
+- Some Clean up
+v0.0.2
+- Edits to dialog info
+- few minor bug fixes 
+- Re added a missing imports
+- Totally new icons scheme (more Coming)
+v0.0.1
+Initial Release.
+- Bug Fixes & some clean up 
+- changed up a few things
+- fixed a error on open
+- added trakt api keys
+- tweaked a few things
+- Made a few edits to a few xmls
